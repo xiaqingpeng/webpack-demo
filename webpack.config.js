@@ -3,6 +3,8 @@
 const path = require('path');
 //引入html - webpack - plugins模块
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+//引入copy - webpack - plugins模块
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 //暴露一个对象，commonjs规范
 module.exports = {
     //模式
@@ -20,10 +22,24 @@ module.exports = {
     plugins: [
         //自动生成一个html文件 在出口位置，并且在这个生成的文件自动引入打包过后的js文件
         new HtmlWebpackPlugin({
-            title: "你是猪吗", //打包过后生成在dist文件夹的html文件的title标题名
-            filename: "abc.html",//打包过后生成在dist文件夹的html文件的文件名
-            template:"./index.html"//将项目页面入口文件作为生成的dist文件的html文件的模板
-        })
-    ]
+            title: "三只松鼠", //打包过后生成在dist文件夹的html文件的title标题名
+            filename: "xyz.html", //打包过后生成在dist文件夹的html文件的文件名
+            template: "./index.html" //将项目页面入口文件作为生成的dist文件的html文件的模板
+        }),
+        new CopyWebpackPlugin([{
+                from: './lib/jquery.min.js',
+                to: "./lib"
+            }]
+
+
+        )
+    ],
+    // 解析
+    resolve: {
+        //别名
+        alias: {
+            vue: 'vue/dist/vue.esm.js'
+        }
+    }
 
 }
