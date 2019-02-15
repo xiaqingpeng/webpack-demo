@@ -15,6 +15,8 @@
          -  配置pack.json的npm脚本
     8. 在项目根目录文件下创建一个index.js(项目页面入口);
     9. 安装插件HtmlWebpackPlugins    npm  install  --save-dev  html-webpack-plugin
+    10. 安装vue     npm  install  --save-dev  vue
+    11. 在 main.js 引入vue     import Vue from  "vue" 
    
 
 ##  配置webpack
@@ -36,6 +38,7 @@
          -  main.js入口文件引入方式(commonjs规范)
             1.  import  "xxx"  (xxx：模块名)
             2.  import XXX from  "xxx"  (XXX:用变量接收引入后的模块)
+         -   
            
       
 ##  打包两行代码为何打包成100行
