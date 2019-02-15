@@ -33,6 +33,10 @@
 ##  上线到服务器上的文件 
      - dist(上线文件)
        - main.js(打包入口文件)
+         -  main.js入口文件引入方式(commonjs规范)
+            1.  import  "xxx"  (xxx：模块名)
+            2.  import XXX from  "xxx"  (XXX:用变量接收引入后的模块)
+           
       
 ##  打包两行代码为何打包成100行
     - 将webpack.config.js 中模式mode改为生产模式 production
